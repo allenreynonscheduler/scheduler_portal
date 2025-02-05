@@ -10,11 +10,19 @@ import {
 } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate(); // ✅ Hook for navigation
+
   const handleClickShowPassword = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
+
+  const handleLogin = () => {
+    localStorage.setItem('token', 'some_token'); // ✅ Store token
+    navigate('/');
   };
 
   return (
@@ -63,6 +71,7 @@ const LoginForm = () => {
         component={Link}
         href="#!"
         type="submit"
+        onClick={handleLogin}
       >
         Sign In
       </Button>
