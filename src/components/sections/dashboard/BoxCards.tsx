@@ -52,7 +52,7 @@ const StatisticsCards = () => {
         width: '100%',
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fill, minmax(min(200px, 100%), 1fr))',
-        gap: 2,
+        gap: 5,
       }}
     >
       {cards.map((card, index) => (
