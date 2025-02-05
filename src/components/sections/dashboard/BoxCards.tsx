@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -9,24 +10,35 @@ import CartIcon from 'components/icons/menu-icons/CartIcon';
 const cards = [
   {
     id: 1,
-    title: '10',
+    value: '10',
     icon: <CartIcon />,
-    description: 'Total Divisions',
+    title: 'Total Divisions',
+    bgcolor: '#dde8f6',
+    color: '#0084ff',
   },
   {
     id: 2,
-    title: '240',
-    description: 'Total Teams',
+    value: '240',
+    icon: <CartIcon />,
+    title: 'Total Teams',
+    bgcolor: '#f6eadd',
+    color: '#ff8000',
   },
   {
     id: 3,
-    title: '240',
-    description: 'Total Games',
+    value: '240',
+    icon: <CartIcon />,
+    title: 'Total Games',
+    bgcolor: '#f6dddd',
+    color: '#ff0000',
   },
   {
-    id: 3,
-    title: '6',
-    description: 'Games Remaining',
+    id: 4,
+    value: '6',
+    icon: <CartIcon />,
+    title: 'Games Remaining',
+    bgcolor: '#f0e9f1',
+    color: '#aa36b5',
   },
 ];
 
@@ -42,30 +54,31 @@ const StatisticsCards = () => {
       }}
     >
       {cards.map((card, index) => (
-        <Card>
-          <CardActionArea
-            onClick={() => setSelectedCard(index)}
-            data-active={selectedCard === index ? '' : undefined}
+        <Paper key={card.id} elevation={6} sx={{ borderRadius: 2, overflow: 'hidden' }}>
+          <Card
             sx={{
+              color: card.color,
+              backgroundColor: card.bgcolor,
               height: '100%',
-              '&[data-active]': {
-                backgroundColor: 'action.selected',
-                '&:hover': {
-                  backgroundColor: 'action.selectedHover',
-                },
-              },
             }}
           >
-            <CardContent sx={{ height: '100%' }}>
-              <Typography variant="h5" component="div">
-                {card.title}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {card.description}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
+            <CardActionArea
+              onClick={() => setSelectedCard(index)}
+              data-active={selectedCard === index ? '' : undefined}
+              sx={{ height: '100%' }}
+            >
+              <CardContent className="text-center" sx={{ height: '100%' }}>
+                {card.icon}
+                <Typography variant="h5" component="div">
+                  {card.value}
+                </Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ color: card.color }}>
+                  {card.title}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Paper>
       ))}
     </Box>
   );
