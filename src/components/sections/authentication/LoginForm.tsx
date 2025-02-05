@@ -1,16 +1,12 @@
 import {
   Box,
   Button,
-  Checkbox,
   Divider,
-  FormControlLabel,
-  FormGroup,
   IconButton,
   InputAdornment,
   Link,
   Stack,
   TextField,
-  Typography,
 } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
 import { useState } from 'react';
@@ -54,15 +50,11 @@ const LoginForm = () => {
           }}
         />
       </Stack>
-      <FormGroup sx={{ my: 2 }}>
-        <FormControlLabel
-          control={<Checkbox />}
-          label="Keep me signed in"
-          sx={{
-            color: 'text.secondary',
-          }}
-        />
-      </FormGroup>
+      <Divider
+        sx={{
+          my: 3,
+        }}
+      />
       <Button
         color="primary"
         variant="contained"
@@ -74,49 +66,6 @@ const LoginForm = () => {
       >
         Sign In
       </Button>
-      <Stack
-        sx={{
-          textAlign: 'center',
-          color: 'text.secondary',
-          my: 3,
-        }}
-      >
-        <Link href="/authentication/forgot-password">
-          <Typography color="primary" variant="subtitle1">
-            Forgot Your Password?
-          </Typography>
-        </Link>
-      </Stack>
-      <Divider
-        sx={{
-          my: 3,
-        }}
-      />
-
-      <Stack
-        spacing={1.5}
-        sx={{
-          mt: 4,
-        }}
-      >
-        <Typography textAlign="center" color="text.secondary" variant="subtitle1">
-          Or sign in using:
-        </Typography>
-        <Button
-          startIcon={<IconifyIcon icon="flat-color-icons:google" />}
-          variant="outlined"
-          sx={{ typography: { sm: 'button', xs: 'subtitle1', whiteSpace: 'nowrap' } }}
-        >
-          Continue with Google
-        </Button>
-        <Button
-          startIcon={<IconifyIcon icon="logos:facebook" />}
-          variant="outlined"
-          sx={{ typography: { sm: 'button', xs: 'subtitle1', whiteSpace: 'nowrap' } }}
-        >
-          Continue with Facebook
-        </Button>
-      </Stack>
     </Box>
   );
 };
