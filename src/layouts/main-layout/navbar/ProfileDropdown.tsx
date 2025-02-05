@@ -13,8 +13,10 @@ import AvatarImage from 'assets/images/avatar.svg';
 import IconifyIcon from 'components/base/IconifyIcon';
 import { profileOptions } from 'data/navbar/menu-data';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ProfileDropdown = () => {
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -23,6 +25,11 @@ const ProfileDropdown = () => {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/login');
   };
   return (
     <Box
@@ -101,6 +108,7 @@ const ProfileDropdown = () => {
               width: '80%',
               py: 0.5,
             }}
+            onClick={handleLogout}
           >
             Logout
           </Button>

@@ -13,6 +13,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
+  const [email, setEmail] = useState('admin@gmail.com');
+  const [password, setPassword] = useState('12345678');
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate(); // ✅ Hook for navigation
 
@@ -32,13 +34,23 @@ const LoginForm = () => {
       }}
     >
       <Stack spacing={3}>
-        <TextField fullWidth variant="outlined" id="mail" type="text" label="Email" />
+        <TextField
+          fullWidth
+          variant="outlined"
+          id="mail"
+          type="text"
+          label="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
         <TextField
           fullWidth
           variant="outlined"
           id="password"
           type={showPassword ? 'text' : 'password'}
           label="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
