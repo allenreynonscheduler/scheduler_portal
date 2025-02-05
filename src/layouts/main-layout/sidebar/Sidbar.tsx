@@ -54,7 +54,7 @@ const Sidebar = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: SideNavPr
                 }}
               >
                 <SidebarItems />
-                <SidebarBanner />
+                {/* <SidebarBanner /> */}
               </Box>
             </SimpleBar>
           </Box>

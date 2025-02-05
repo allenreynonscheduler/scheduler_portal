@@ -1,19 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { SvgIconProps } from '@mui/material';
-import CategoriesIcon from 'components/icons/menu-icons/CategoriesIcon';
-import CouponsIcon from 'components/icons/menu-icons/CouponsIcon';
-import CustomersIcon from 'components/icons/menu-icons/CustomersIcon';
-import ForgotPasswordIcon from 'components/icons/menu-icons/ForgotPasswordIcon';
-import GlobalSettingsIcon from 'components/icons/menu-icons/GlobalSettingsIcon';
+// import CategoriesIcon from 'components/icons/menu-icons/CategoriesIcon';
+// import CouponsIcon from 'components/icons/menu-icons/CouponsIcon';
+// import CustomersIcon from 'components/icons/menu-icons/CustomersIcon';
+// import ForgotPasswordIcon from 'components/icons/menu-icons/ForgotPasswordIcon';
+// import GlobalSettingsIcon from 'components/icons/menu-icons/GlobalSettingsIcon';
 import HomeIcon from 'components/icons/menu-icons/HomeIcon';
-import InboxIcon from 'components/icons/menu-icons/InboxIcon';
-import OrderIcon from 'components/icons/menu-icons/OrderIcon';
-import PersonalSettingsIcon from 'components/icons/menu-icons/PersonalSettingsIcon';
-import ProductsIcon from 'components/icons/menu-icons/ProductsIcon';
-import ReportsIcon from 'components/icons/menu-icons/ReportsIcon';
-import ResetPasswordIcon from 'components/icons/menu-icons/ResetPasswordIcon';
-import SignUpIcon from 'components/icons/menu-icons/SignInIcon';
-import SignInIcon from 'components/icons/menu-icons/SignUpIcon';
+// import InboxIcon from 'components/icons/menu-icons/InboxIcon';
+// import OrderIcon from 'components/icons/menu-icons/OrderIcon';
+// import PersonalSettingsIcon from 'components/icons/menu-icons/PersonalSettingsIcon';
+// import ProductsIcon from 'components/icons/menu-icons/ProductsIcon';
+// import ReportsIcon from 'components/icons/menu-icons/ReportsIcon';
+// import ResetPasswordIcon from 'components/icons/menu-icons/ResetPasswordIcon';
+// import SignUpIcon from 'components/icons/menu-icons/SignInIcon';
+// import SignInIcon from 'components/icons/menu-icons/SignUpIcon';
 
 import { uniqueId } from 'lodash';
 
@@ -43,107 +43,203 @@ const Menuitems: IMenuitems[] = [
     available: true,
   },
   {
-    id: uniqueId(),
-    title: 'Orders',
-    icon: OrderIcon,
-    href: '#!',
-    chip: '16',
-    chipColor: 'secondary',
-    available: false,
+    navlabel: true,
+    subheader: 'Schedule Management',
   },
   {
     id: uniqueId(),
-    title: 'Products',
-    icon: ProductsIcon,
+    title: 'Master Scheduler',
+    icon: HomeIcon,
     href: '#!',
-    available: false,
+    // chip: '16',
+    // chipColor: 'secondary',
+    available: true,
   },
   {
     id: uniqueId(),
-    title: 'Categories',
-    icon: CategoriesIcon,
+    title: 'ABC',
+    icon: HomeIcon,
     href: '#!',
-    available: false,
+    available: true,
   },
   {
     id: uniqueId(),
-    title: 'Customers',
-    icon: CustomersIcon,
+    title: 'Ice Slot',
+    icon: HomeIcon,
     href: '#!',
-    available: false,
+    available: true,
   },
   {
     id: uniqueId(),
-    title: 'Reports',
-    icon: ReportsIcon,
+    title: 'Home Ice',
+    icon: HomeIcon,
     href: '#!',
-    available: false,
+    available: true,
   },
   {
     id: uniqueId(),
-    title: 'Coupons',
-    icon: CouponsIcon,
+    title: 'Team Stats',
+    icon: HomeIcon,
     href: '#!',
-    available: false,
+    available: true,
   },
   {
     id: uniqueId(),
-    title: 'Inbox',
-    icon: InboxIcon,
+    title: 'Survey',
+    icon: HomeIcon,
     href: '#!',
-    available: false,
+    available: true,
   },
   {
     navlabel: true,
-    subheader: 'Authentication',
+    subheader: 'League Management',
   },
   {
     id: uniqueId(),
-    title: 'Sign Up',
-    icon: SignUpIcon,
-    href: '/authentication/sign-up',
+    title: 'Leagues',
+    icon: HomeIcon,
+    href: '#!',
     available: true,
   },
   {
     id: uniqueId(),
-    title: 'Sign In',
-    icon: SignInIcon,
-    href: '/authentication/login',
+    title: 'Seasons',
+    icon: HomeIcon,
+    href: '#!',
     available: true,
   },
   {
     id: uniqueId(),
-    title: 'Forgot Password',
-    icon: ForgotPasswordIcon,
-    href: '/authentication/forgot-password',
+    title: 'Divisions',
+    icon: HomeIcon,
+    href: '#!',
     available: true,
   },
   {
     id: uniqueId(),
-    title: 'Reset Password',
-    icon: ResetPasswordIcon,
-    href: '/authentication/reset-password',
+    title: 'Conference',
+    icon: HomeIcon,
+    href: '#!',
     available: true,
   },
+  {
+    id: uniqueId(),
+    title: 'Arena/Facilities',
+    icon: HomeIcon,
+    href: '#!',
+    available: true,
+  },
+  {
+    id: uniqueId(),
+    title: 'Teams',
+    icon: HomeIcon,
+    href: '#!',
+    available: true,
+  },
+  {
+    navlabel: true,
+    subheader: 'User Management',
+  },
+  {
+    id: uniqueId(),
+    title: 'Users',
+    icon: HomeIcon,
+    href: '#!',
+    available: true,
+  },
+  // {
+  //   id: uniqueId(),
+  //   title: 'Products',
+  //   icon: ProductsIcon,
+  //   href: '#!',
+  //   available: false,
+  // },
+  // {
+  //   id: uniqueId(),
+  //   title: 'Categories',
+  //   icon: CategoriesIcon,
+  //   href: '#!',
+  //   available: false,
+  // },
+  // {
+  //   id: uniqueId(),
+  //   title: 'Customers',
+  //   icon: CustomersIcon,
+  //   href: '#!',
+  //   available: false,
+  // },
+  // {
+  //   id: uniqueId(),
+  //   title: 'Reports',
+  //   icon: ReportsIcon,
+  //   href: '#!',
+  //   available: false,
+  // },
+  // {
+  //   id: uniqueId(),
+  //   title: 'Coupons',
+  //   icon: CouponsIcon,
+  //   href: '#!',
+  //   available: false,
+  // },
+  // {
+  //   id: uniqueId(),
+  //   title: 'Inbox',
+  //   icon: InboxIcon,
+  //   href: '#!',
+  //   available: false,
+  // },
+  // {
+  //   navlabel: true,
+  //   subheader: 'Authentication',
+  // },
+  // {
+  //   id: uniqueId(),
+  //   title: 'Sign Up',
+  //   icon: SignUpIcon,
+  //   href: '/authentication/sign-up',
+  //   available: true,
+  // },
+  // {
+  //   id: uniqueId(),
+  //   title: 'Sign In',
+  //   icon: SignInIcon,
+  //   href: '/authentication/login',
+  //   available: true,
+  // },
+  // {
+  //   id: uniqueId(),
+  //   title: 'Forgot Password',
+  //   icon: ForgotPasswordIcon,
+  //   href: '/authentication/forgot-password',
+  //   available: true,
+  // },
+  // {
+  //   id: uniqueId(),
+  //   title: 'Reset Password',
+  //   icon: ResetPasswordIcon,
+  //   href: '/authentication/reset-password',
+  //   available: true,
+  // },
 
-  {
-    navlabel: true,
-    subheader: 'Settings',
-  },
-  {
-    id: uniqueId(),
-    title: 'Personal Settings',
-    icon: PersonalSettingsIcon,
-    href: '/settings/#!',
-    available: false,
-  },
-  {
-    id: uniqueId(),
-    title: 'Global Settings',
-    icon: GlobalSettingsIcon,
-    href: '/settings/#!',
-    available: false,
-  },
+  // {
+  //   navlabel: true,
+  //   subheader: 'Settings',
+  // },
+  // {
+  //   id: uniqueId(),
+  //   title: 'Personal Settings',
+  //   icon: PersonalSettingsIcon,
+  //   href: '/settings/#!',
+  //   available: false,
+  // },
+  // {
+  //   id: uniqueId(),
+  //   title: 'Global Settings',
+  //   icon: GlobalSettingsIcon,
+  //   href: '/settings/#!',
+  //   available: false,
+  // },
 ];
 
 export default Menuitems;

@@ -7,3 +7,9 @@ input:-webkit-autofill:focus {
 input[data-autocompleted] {
   background-color: transparent !important;
 }
+
+.css-10596f4 {
+  background-color: unset !important;
+  box-shadow: unset !important;
+}
+

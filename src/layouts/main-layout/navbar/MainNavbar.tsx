@@ -2,16 +2,16 @@ import {
   AppBar,
   Box,
   IconButton,
-  InputAdornment,
+  // InputAdornment,
   Link,
   Stack,
-  TextField,
+  // TextField,
   Toolbar,
 } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
 import Logo from 'components/icons/brand/Logo';
-import LanguageDropdown from 'layouts/main-layout/navbar/LanguageDropdown';
-import NotificationDropdown from './NotificationDropdown';
+// import LanguageDropdown from 'layouts/main-layout/navbar/LanguageDropdown';
+// import NotificationDropdown from './NotificationDropdown';
 import ProfileDropdown from './ProfileDropdown';
 
 interface MainNavbarProps {
@@ -52,7 +52,7 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
               }}
             />
           </IconButton>
-          <TextField
+          {/* <TextField
             placeholder="Search..."
             InputProps={{
               startAdornment: (
@@ -65,7 +65,7 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
             sx={{
               display: { xs: 'none', lg: 'block' },
             }}
-          />
+          /> */}
           <IconButton>
             <IconifyIcon
               icon="majesticons:search-line"
@@ -78,8 +78,8 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
         </Stack>
         <Box flexGrow={1} />
         <Stack spacing={0.5} direction="row" alignItems="center">
-          <LanguageDropdown />
-          <NotificationDropdown />
+          {/* <LanguageDropdown /> */}
+          {/* <NotificationDropdown /> */}
           <ProfileDropdown />
         </Stack>
       </Toolbar>
