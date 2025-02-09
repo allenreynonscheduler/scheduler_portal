@@ -46,3 +46,8 @@ input[data-autocompleted] {
 .css-16b2pl9.Mui-selected{
   color:#000 !important;
 }
+.css-16b2pl9:hover,
+.css-16b2pl9:focus{
+  color:#000 !important;
+  background-color: #F5EFE7 !important;
+}
