@@ -15,7 +15,7 @@ declare module '@mui/material/styles/createTypography' {
 }
 
 const typography: TypographyOptions = {
-  fontFamily: ['Inter', 'Open Sans', 'sans-serif'].join(','),
+  fontFamily: ['Plus Jakarta Sans'].join(','),
   fontSize: 14,
   fontWeightLighter: 100,
   fontWeightLight: 300,

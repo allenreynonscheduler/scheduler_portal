@@ -1,18 +1,58 @@
-import { Box, Card, Grid, Stack } from '@mui/material';
+import { Box, Card, Grid, Stack,Container } from '@mui/material';
 import LoginForm from 'components/sections/authentication/LoginForm';
-
+import logobg from '../../../assets/bglogin.png';
+import logo from '../../../assets/loginlogo.png';
 const LoginPage = () => {
   return (
-    <Box mx="auto" sx={{ mx: 'auto', p: 4, width: 1, height: 1 }}>
-      <Grid container spacing={1} justifyContent="center" alignItems="center">
-        <Grid item xs={12} sm={9} md={6} lg={5} xl={4}>
-          <Card sx={{ py: { xs: 3, sm: 6 }, px: { xs: 5, sm: 7.5 }, bgcolor: 'common.white' }}>
-            <Stack spacing={1} sx={{ mb: 1, textAlign: 'center' }}></Stack>
-            <LoginForm />
-          </Card>
-        </Grid>
+    // <Container
+    //   sx={{
+    //     padding: 0,
+    //     margin: 0,
+    //   }}
+    // >
+    <Grid container sx={{ height: '99vh',width:'100%',padding:0,margin:0 }} spacing={0}>
+      <Grid
+        item
+        xs={12}
+        md={5}
+        
+      >
+          <Grid container style={{height:'99vh'}}>
+            <Grid item xs={6} md={6} style={{margin:'auto'}}>
+              <div style={{margin:'auto',textAlign:'center'}}>
+                <img
+                  src={logo} // Replace with your image URL
+                  alt="Placeholder"
+                  style={{
+                    width: '100px',
+                    height: '100px',
+                    margin: 'auto',
+                    alignSelf: 'center',
+                  }}
+                />
+                <h3 style={{marginTop:'30px'}}>Eizen Group <br></br> Game Scheduler</h3>
+              </div>
+              <div style={{margin:'auto',paddingTop:'30px'}}>
+                <LoginForm />
+              </div>
+            </Grid>
+
+          </Grid>
       </Grid>
-    </Box>
+      <Grid item xs={12} md={7}>
+        <img
+          src={logobg} // Replace with your image URL
+          alt="Placeholder"
+          style={{
+            width: '100%',
+            height: '99vh',
+            objectFit: 'cover',
+          }}
+        />
+      </Grid>
+
+    </Grid>
+    // </Container>
   );
 };
 

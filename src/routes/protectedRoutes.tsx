@@ -3,6 +3,12 @@ import { lazy } from 'react';
 
 const Dashboard = lazy(() => import('pages/dashboard/index'));
 const CategoriesPage = lazy(() => import('pages/categories'));
+const LeaguesPage = lazy(() => import('pages/leagues'));
+const Seasons = lazy(() => import('pages/seasons'));
+const Divisions = lazy(() => import('pages/divisions'));
+const Conference = lazy(() => import('pages/conference'));
+const Arena = lazy(() => import('pages/arena'));
+const Teams = lazy(() => import('pages/teams'));
 
 // Protected Route Component
 const ProtectedRoute = () => {
@@ -18,8 +24,28 @@ export const protectedRoutes = {
       element: <Dashboard />,
     },
     {
-      path: 'categories',
-      element: <CategoriesPage />,
+      path: 'leagues',
+      element: <LeaguesPage />,
+    },
+    {
+      path: 'seasons',
+      element: <Seasons />,
+    },
+    {
+      path: 'divisions',
+      element: <Divisions />,
+    },
+    {
+      path: 'conference',
+      element: <Conference />,
+    },
+    {
+      path: 'arena',
+      element: <Arena />,
+    },
+    {
+      path: 'teams',
+      element: <Teams />,
     },
   ],
 };

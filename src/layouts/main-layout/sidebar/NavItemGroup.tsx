@@ -4,7 +4,7 @@ interface NavItemGroupProp {
   subheader?: string;
 }
 const NavItemGroup = ({ subheader }: NavItemGroupProp) => {
-  return <ListSubheader>{subheader}</ListSubheader>;
+  return <section style={{fontWeight:'bold',padding:'10px'}}>{subheader}</section>;
 };
 
 export default NavItemGroup;

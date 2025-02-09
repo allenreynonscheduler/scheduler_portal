@@ -13,3 +13,30 @@ input[data-autocompleted] {
   box-shadow: unset !important;
 }
 
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation24.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthMd.MuiDialog-paperFullWidth.css-12fqudz-MuiPaper-root-MuiDialog-paper{
+  background-color: white !important;
+}
+.css-jeov62-MuiPaper-root-MuiDialog-paper{
+  background-color: white !important;
+}
+.css-wk0l96-MuiPaper-root-MuiDialog-paper{
+  background-color: white !important;
+}
+.css-16ljh5v-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root{
+  line-height: 20px !important;
+  width:100% !important;
+}
+.css-rdf0wi-MuiContainer-root{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.css-gi3u9r-MuiTypography-root-MuiLink-root-MuiButtonBase-root-MuiListItemButton-root.Mui-selected{
+  color:#000 !important;
+}
+
+.css-gi3u9r-MuiTypography-root-MuiLink-root-MuiButtonBase-root-MuiListItemButton-root:hover,
+.css-gi3u9r-MuiTypography-root-MuiLink-root-MuiButtonBase-root-MuiListItemButton-root:focus{
+  color:#000 !important;
+  background-color: #F5EFE7 !important;
+}

@@ -5,7 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 import CartIcon from 'components/icons/menu-icons/CartIcon';
-
+import { Grid } from '@mui/material';
 const cards = [
   {
     id: 1,
@@ -33,6 +33,7 @@ const cards = [
 const StatisticsCards = () => {
   const [selectedCard, setSelectedCard] = useState(0);
   return (
+   
     <Box
       sx={{
         width: '100%',
@@ -42,7 +43,8 @@ const StatisticsCards = () => {
       }}
     >
       {cards.map((card, index) => (
-        <Card>
+        
+         <Card>
           <CardActionArea
             onClick={() => setSelectedCard(index)}
             data-active={selectedCard === index ? '' : undefined}
@@ -56,6 +58,9 @@ const StatisticsCards = () => {
               },
             }}
           >
+            
+       
+            
             <CardContent sx={{ height: '100%' }}>
               <Typography variant="h5" component="div">
                 {card.title}
@@ -64,10 +69,15 @@ const StatisticsCards = () => {
                 {card.description}
               </Typography>
             </CardContent>
+            
+             
           </CardActionArea>
         </Card>
+       
       ))}
+      
     </Box>
+
   );
 };
 

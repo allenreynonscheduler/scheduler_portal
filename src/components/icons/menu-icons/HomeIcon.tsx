@@ -1,6 +1,6 @@
 import { SvgIcon, SvgIconProps } from '@mui/material';
 
-function HomeIcon(props: SvgIconProps) {
+function HomeIcon (props: SvgIconProps) {
   return (
     <SvgIcon {...props}>
       <path

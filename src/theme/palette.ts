@@ -1,5 +1,5 @@
 import { PaletteColorOptions, PaletteOptions } from '@mui/material';
-import { blue, green, grey, orange, purple, red, silver, turquoise } from './colors';
+import { blue, green, grey, orange, purple, red, silver, turquoise,oceanwhite } from './colors';
 
 declare module '@mui/material/styles' {
   interface PaletteOptions {
@@ -38,7 +38,7 @@ const palette: PaletteOptions = {
     focus: grey[400],
   },
   background: {
-    paper: grey[50],
+    paper: oceanwhite[50],
     default: grey[100],
   },
   text: {
@@ -57,7 +57,7 @@ const palette: PaletteOptions = {
     main: silver[500],
   },
   primary: {
-    main: blue[800],
+    main: oceanwhite[800],
     light: blue[200],
     lighter: blue[100],
     dark: blue[600],

@@ -1,19 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { SvgIconProps } from '@mui/material';
-// import CategoriesIcon from 'components/icons/menu-icons/CategoriesIcon';
-// import CouponsIcon from 'components/icons/menu-icons/CouponsIcon';
-// import CustomersIcon from 'components/icons/menu-icons/CustomersIcon';
-// import ForgotPasswordIcon from 'components/icons/menu-icons/ForgotPasswordIcon';
-// import GlobalSettingsIcon from 'components/icons/menu-icons/GlobalSettingsIcon';
-import HomeIcon from 'components/icons/menu-icons/HomeIcon';
-// import InboxIcon from 'components/icons/menu-icons/InboxIcon';
-// import OrderIcon from 'components/icons/menu-icons/OrderIcon';
-// import PersonalSettingsIcon from 'components/icons/menu-icons/PersonalSettingsIcon';
-// import ProductsIcon from 'components/icons/menu-icons/ProductsIcon';
-// import ReportsIcon from 'components/icons/menu-icons/ReportsIcon';
-// import ResetPasswordIcon from 'components/icons/menu-icons/ResetPasswordIcon';
-// import SignUpIcon from 'components/icons/menu-icons/SignInIcon';
-// import SignInIcon from 'components/icons/menu-icons/SignUpIcon';
+import DashboardIcon from 'components/icons/menu-icons/Dashboard';
+import MasterscheduleIcon from 'components/icons/menu-icons/Masterschedule';
+import ABCIcon from 'components/icons/menu-icons/ABC';
+import IceSlotIcon from 'components/icons/menu-icons/IceSlot';
+import HomeIceIcon from 'components/icons/menu-icons/Homeice';
+import TeamStatsIcon from 'components/icons/menu-icons/TeamStats';
+import SurveryIcon from 'components/icons/menu-icons/Survery';
+import LeagueIcon from 'components/icons/menu-icons/League';
+import SeasonsIcon from 'components/icons/menu-icons/Seasons';
+import DivisionIcon from 'components/icons/menu-icons/Division';
+import ConferenceIcon from 'components/icons/menu-icons/Conference';
+import ArenaIcon from 'components/icons/menu-icons/Arena';
+import TeamsIcon from 'components/icons/menu-icons/Teams';
+import UsersIcon from 'components/icons/menu-icons/Users';
+
 
 import { uniqueId } from 'lodash';
 
@@ -38,7 +39,7 @@ const Menuitems: IMenuitems[] = [
   {
     id: uniqueId(),
     title: 'Dashboard',
-    icon: HomeIcon,
+    icon: DashboardIcon,
     href: '/',
     available: true,
   },
@@ -49,7 +50,7 @@ const Menuitems: IMenuitems[] = [
   {
     id: uniqueId(),
     title: 'Master Scheduler',
-    icon: HomeIcon,
+    icon: MasterscheduleIcon,
     href: '#!',
     // chip: '16',
     // chipColor: 'secondary',
@@ -58,35 +59,35 @@ const Menuitems: IMenuitems[] = [
   {
     id: uniqueId(),
     title: 'ABC',
-    icon: HomeIcon,
+    icon:  ABCIcon,
     href: '#!',
     available: true,
   },
   {
     id: uniqueId(),
     title: 'Ice Slot',
-    icon: HomeIcon,
+    icon: IceSlotIcon,
     href: '#!',
     available: true,
   },
   {
     id: uniqueId(),
     title: 'Home Ice',
-    icon: HomeIcon,
+    icon: HomeIceIcon,
     href: '#!',
     available: true,
   },
   {
     id: uniqueId(),
-    title: 'Team Stats',
-    icon: HomeIcon,
+    title:'Team Stats',
+    icon: TeamStatsIcon,
     href: '#!',
     available: true,
   },
   {
     id: uniqueId(),
     title: 'Survey',
-    icon: HomeIcon,
+    icon: SurveryIcon,
     href: '#!',
     available: true,
   },
@@ -97,43 +98,43 @@ const Menuitems: IMenuitems[] = [
   {
     id: uniqueId(),
     title: 'Leagues',
-    icon: HomeIcon,
-    href: '#!',
+    icon: LeagueIcon,
+    href: 'leagues',
     available: true,
   },
   {
     id: uniqueId(),
     title: 'Seasons',
-    icon: HomeIcon,
-    href: '#!',
+    icon: SeasonsIcon,
+    href: 'seasons',
     available: true,
   },
   {
     id: uniqueId(),
     title: 'Divisions',
-    icon: HomeIcon,
-    href: '#!',
+    icon: DivisionIcon,
+    href: 'divisions',
     available: true,
   },
   {
     id: uniqueId(),
     title: 'Conference',
-    icon: HomeIcon,
-    href: '#!',
+    icon: ConferenceIcon,
+    href: 'conference',
     available: true,
   },
   {
     id: uniqueId(),
     title: 'Arena/Facilities',
-    icon: HomeIcon,
-    href: '#!',
+    icon: ArenaIcon,
+    href: 'arena',
     available: true,
   },
   {
     id: uniqueId(),
     title: 'Teams',
-    icon: HomeIcon,
-    href: '#!',
+    icon: TeamsIcon,
+    href: 'teams',
     available: true,
   },
   {
@@ -143,7 +144,7 @@ const Menuitems: IMenuitems[] = [
   {
     id: uniqueId(),
     title: 'Users',
-    icon: HomeIcon,
+    icon: UsersIcon,
     href: '#!',
     available: true,
   },

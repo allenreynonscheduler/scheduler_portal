@@ -13,18 +13,12 @@ import BoxCards from 'components/sections/dashboard/BoxCards';
 
 const Dashboard = () => {
   return (
-    <Box
-      sx={{
-        pb: 1,
-      }}
-    >
-      <PageHeader>Dashboard</PageHeader>
+
       <Grid container spacing={1} justifyContent="center" alignItems="center">
-        <Grid item xs={12} lg={8}>
+        <Grid item xs={12} lg={12}>
           <BoxCards />
         </Grid>
       </Grid>
-    </Box>
   );
 };
 

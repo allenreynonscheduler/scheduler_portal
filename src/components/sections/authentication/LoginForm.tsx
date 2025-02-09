@@ -39,7 +39,7 @@ const LoginForm = () => {
           variant="outlined"
           id="mail"
           type="text"
-          label="Email"
+          label="Username"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -75,17 +75,17 @@ const LoginForm = () => {
           my: 3,
         }}
       />
-      <Button
-        color="primary"
-        variant="contained"
-        size="large"
-        fullWidth
-        component={Link}
-        href="#!"
-        type="submit"
-        onClick={handleLogin}
-      >
-        Sign In
+        <Button
+          variant="contained"
+          size="large"
+          fullWidth
+          component={Link}
+          href="#!"
+          type="submit"
+          onClick={handleLogin}
+          style={{ backgroundColor: '#213555',color: 'white',borderRadius: '15px' }}
+        >
+        Log in
       </Button>
     </Box>
   );
