@@ -2,13 +2,13 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { lazy } from 'react';
 
 const Dashboard = lazy(() => import('pages/dashboard/index'));
-const CategoriesPage = lazy(() => import('pages/categories'));
-const LeaguesPage = lazy(() => import('pages/leagues'));
-const Seasons = lazy(() => import('pages/seasons'));
-const Divisions = lazy(() => import('pages/divisions'));
-const Conference = lazy(() => import('pages/conference'));
-const Arena = lazy(() => import('pages/arena'));
-const Teams = lazy(() => import('pages/teams'));
+const CategoriesPage = lazy(() => import('pages/categories/index'));
+const LeaguesPage = lazy(() => import('pages/leagues/index'));
+const Seasons = lazy(() => import('pages/seasons/index'));
+const Divisions = lazy(() => import('pages/divisions/index'));
+const Conference = lazy(() => import('pages/conference/index'));
+const Arena = lazy(() => import('pages/arena/index'));
+const Teams = lazy(() => import('pages/teams/index'));
 
 // Protected Route Component
 const ProtectedRoute = () => {
