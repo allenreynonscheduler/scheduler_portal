@@ -58,9 +58,6 @@ const StatisticsCards = () => {
               },
             }}
           >
-            
-       
-            
             <CardContent sx={{ height: '100%' }}>
               <Typography variant="h5" component="div">
                 {card.title}
@@ -69,13 +66,10 @@ const StatisticsCards = () => {
                 {card.description}
               </Typography>
             </CardContent>
-            
-             
+
           </CardActionArea>
         </Card>
-       
       ))}
-      
     </Box>
 
   );
