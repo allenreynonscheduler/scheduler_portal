@@ -10,9 +10,9 @@ interface IProfileOptions {
   icon: string;
 }
 export const profileOptions: IProfileOptions[] = [
-  { id: uniqueId(), title: 'My Profile', icon: 'fa-regular:user' },
-  { id: uniqueId(), title: 'My Account', icon: 'fa6-regular:envelope' },
-  { id: uniqueId(), title: 'My Tasks', icon: 'fa-solid:tasks' },
+  // { id: uniqueId(), title: 'My Profile', icon: 'fa-regular:user' },
+  // { id: uniqueId(), title: 'My Account', icon: 'fa6-regular:envelope' },
+  // { id: uniqueId(), title: 'My Tasks', icon: 'fa-solid:tasks' },
 ];
 
 interface INotification {

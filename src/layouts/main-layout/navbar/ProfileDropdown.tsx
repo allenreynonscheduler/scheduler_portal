@@ -107,6 +107,7 @@ const ProfileDropdown = () => {
               mt: 1.5,
               width: '80%',
               py: 0.5,
+              color:'black'
             }}
             onClick={handleLogout}
           >

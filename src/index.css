@@ -40,3 +40,9 @@ input[data-autocompleted] {
   color:#000 !important;
   background-color: #F5EFE7 !important;
 }
+.css-v6lcno-MuiPaper-root-MuiDrawer-paper{
+  overflow-y: hidden !important;
+}
+.css-16b2pl9.Mui-selected{
+  color:#000 !important;
+}

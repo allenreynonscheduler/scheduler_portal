@@ -23,11 +23,9 @@ const handleClickOpen = () => {
     setOpen(true);
   };
 
-   const handleClose = (reason?: string) => {
+   const handleClose = () => {
     // Prevent closing on backdrop click
-    if (reason === 'backdropClick') {
-      return;
-    }
+  
     setOpen(false);
   };
   return (

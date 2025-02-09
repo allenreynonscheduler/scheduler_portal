@@ -4,6 +4,7 @@ import SimpleBar from 'simplebar-react';
 import SidebarBanner from './SidebarBanner';
 import SidebarItems from './SidebarItems';
 import SidebarLogo from './SidebarLogo';
+import logo from '../../../assets/loginlogo.png';
 interface SideNavProps {
   onDrawerClose: () => void;
   onDrawerTransitionEnd: () => void;
@@ -43,7 +44,18 @@ const Sidebar = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: SideNavPr
                 boxShadow: 9,
               }}
             >
-              <SidebarLogo />
+               <img
+                  src={logo} // Replace with your image URL
+                  alt="Placeholder"
+                  style={{
+                    width: '60px',
+                    height: '60px',
+                    margin: 'auto',
+                    alignSelf: 'center',
+                    marginTop:'20px'
+                  }}
+                />
+              {/* <SidebarLogo /> */}
             </Box>
 
             <SimpleBar style={{ height: 'calc(100% - 68px)' }}>
