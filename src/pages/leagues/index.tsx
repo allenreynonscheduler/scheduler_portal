@@ -33,7 +33,7 @@ const handleClickOpen = () => {
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
            <Card sx={{ py: { xs: 3, sm: 2 }, px: { xs: 5, sm: 3 }, bgcolor: 'common.white' }}>
               <p style={{fontSize: '18px', fontWeight: 'bold', display: 'flex',gap: '10px'}}>Leagues</p>
-              <p style={{fontWeight: 'normal',fontSize: '14px', display: 'flex',gap: '10px',marginTop:'5px'}}>Dashboard <div style={{color:'#D9D9D9'}}>&#x25CF;</div> League</p>
+              <p style={{fontWeight: 'normal',fontSize: '14px', display: 'flex',gap: '10px',marginTop:'5px'}}>Dashboard <span style={{color:'#D9D9D9'}}>&#x25CF;</span> League</p>
            </Card>
       </Grid>
       
