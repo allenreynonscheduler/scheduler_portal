@@ -38,21 +38,6 @@ const Page = () => {
     setOpen(false);
   };
 
-  const fetchTeams = async () => {
-    try {
-      const response = await fetch(`${process.env.VITE_API_URL_API}/testpi`);
-      const data = await response.json();
-      console.log(data);
-      // Handle the data as needed
-    } catch (error) {
-      console.error('Error fetching teams:', error);
-    }
-  };
-
-  React.useEffect(() => {
-    fetchTeams();
-  }, []);
-
   return (
     <Grid container spacing={2} justifyContent="center" alignItems="center">
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
