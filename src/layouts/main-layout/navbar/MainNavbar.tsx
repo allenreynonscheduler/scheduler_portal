@@ -6,6 +6,7 @@ import {
   Link,
   Stack,
   // TextField,
+  Typography,
   Toolbar,
 } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
@@ -22,6 +23,9 @@ const MainNavbar = ({ onDrawerToggle }: MainNavbarProps) => {
   return (
     <AppBar position="sticky">
       <Toolbar>
+        <Typography variant="h1" color="black" className="hidden lg:block">
+          CCRHL - WINTER 2025
+        </Typography>
         <Stack direction="row" spacing={{ xs: 0, sm: 2 }} alignItems="center">
           <Link
             href="/"

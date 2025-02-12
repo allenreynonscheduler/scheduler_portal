@@ -3,6 +3,7 @@ import BreakpointsProvider from 'providers/useBreakPoint';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
+import Container from '@mui/material/Container';
 import router from 'routes/router.tsx';
 import { theme } from 'theme/theme.ts';
 import './index.css';

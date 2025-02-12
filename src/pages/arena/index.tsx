@@ -38,66 +38,69 @@ const CategoriesPage = () => {
       setOpen(false);
     };
   return (
-    <Grid container spacing={2} justifyContent="center" alignItems="center">
-      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-           <Card sx={{ py: { xs: 3, sm: 2 }, px: { xs: 5, sm: 3 }, bgcolor: 'common.white' }}>
-              <p style={{fontSize: '18px', fontWeight: 'bold', display: 'flex',gap: '10px'}}>Arena</p>
-              <p style={{fontWeight: 'normal',fontSize: '14px', display: 'flex',gap: '10px',marginTop:'5px'}}>Dashboard <span style={{color:'#D9D9D9'}}>&#x25CF;</span> Arena</p>
-           </Card>
-      </Grid>
-      
+    <Grid container spacing={2} justifyContent="center" alignItems="center">      
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12} sx={{ mt: 1 }}>
            <Card sx={{ py: { xs: 3, sm: 3 }, px: { xs: 5, sm: 3 }, bgcolor: 'common.white' ,height:'75vh'}}>
-               <Grid container spacing={2}>
-                <Grid item xs={3} sm={3} md={3} lg={3} xl={3}>
-                     <TextField
-                     fullWidth
-                      placeholder="Search ..."
-                      variant="outlined"
-                      type="text"
-                      InputProps={{
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <SearchIcon />
-                          </InputAdornment>
-                        ),
-                        style: { borderRadius: 10 },
-                      }}
-                    />
+              <p className="!mb-4" style={{fontSize: '18px', fontWeight: 'bold', display: 'flex',gap: '10px'}}>Arena / Facilities</p>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={12} lg={6}>
+                   <Grid container>
+                      <Grid item xs={10} sm={10} md={10} lg={10} xl={10}>
+                          <TextField
+                          fullWidth
+                            placeholder="Search ..."
+                            variant="outlined"
+                            type="text"
+                            InputProps={{
+                              endAdornment: (
+                                <InputAdornment position="end">
+                                  <SearchIcon />
+                                </InputAdornment>
+                              ),
+                              style: { borderRadius: 10 },
+                            }}
+                          />
+                      </Grid>
+                      <Grid item xs={2} sm={2} md={2} lg={1} xl={1}>
+                          <Button
+                            fullWidth
+                            type="submit"
+                          >
+                            <FilterIcon/>
+                          </Button>
+                      </Grid>
+                   </Grid>
                 </Grid>
-                <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
-                    <Button
-                    size="large"
-                    fullWidth
-                    type="submit"
-                  >
-                    <FilterIcon/>
-                  </Button>
-                </Grid>
-                <Grid item xs={7} sm={7} md={7} lg={7} xl={7} style={{textAlign:'end'}}>
-                    <Button
-                    style={{backgroundColor:'#213555',color:'white',borderRadius:15,}}
-                    variant="contained"
-                    size="large"
-                    type="submit"
-                    onClick={handleClickOpen}
-                  >
-                   <PlusIcon style={{marginRight: '10px',width: '20px',height: '20px'}} /> Add Arena
-                  </Button>
-                </Grid>
-                <Grid item xs={1} sm={1} md={1} lg={1} xl={1} style={{textAlign:'end'}}>
-                    <Button
-                    size="large"
-                    type="submit"
-                    >
-                   <DownloadIcon /> 
-                  </Button>
-                </Grid>
+                <Grid item xs={12} sm={12} lg={6}>
+                    <Grid container justifyContent="flex-end" spacing={1}>
+                      <Grid item xs={10} sx={{ textAlign: 'end' }}>
+                        <Button
+                          sx={{
+                            bgcolor: '#213555',
+                            color: 'white',
+                            fontSize: 14,
+                            borderRadius: 2,
+                            '&:hover': { bgcolor: '#1a2c44' }, // Optional: Add hover effect
+                          }}
+                          variant="contained"
+                          size="large"
+                          onClick={handleClickOpen}
+                        >
+                          <PlusIcon sx={{ mr: 1, width: 18, height: 18 }} /> Add Arena
+                        </Button>
+                      </Grid>
+                      <Grid item xs={2} sm={2} md={2} lg={1} xl={1} sx={{ textAlign: 'end' }}>
+                        <Button fullWidth>
+                          <DownloadIcon />
+                        </Button>
+                      </Grid>
+                    </Grid>
+                  </Grid>
               </Grid>
 
               <Grid container spacing={2} style={{marginTop:'20px'}}>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <TableContainer component={Paper} style={{backgroundColor: 'transparent'}}>
+                    <TableContainer component={Paper} elevation={0} style={{backgroundColor: 'transparent'}}>
                         <Table >
                           <TableHead>
                             <TableRow>
@@ -107,7 +110,7 @@ const CategoriesPage = () => {
                               <TableCell sx={{fontSize: '16px'}}>Facility Name</TableCell>
                               <TableCell sx={{fontSize: '16px'}}>Rink</TableCell>
                               <TableCell sx={{fontSize: '16px'}}>Region</TableCell>
-                              <TableCell sx={{fontSize: '16px'}}>Actions</TableCell>
+                              <TableCell sx={{fontSize: '16px', width: '15%'}}>Actions</TableCell>
                             </TableRow>
                           </TableHead>
                           <TableBody>
@@ -120,11 +123,11 @@ const CategoriesPage = () => {
                                 <TableCell sx={{fontSize: '14px'}}>{row.rink}</TableCell>
                                 <TableCell sx={{fontSize: '14px'}}>{row.region}</TableCell>
                                 <TableCell sx={{fontSize: '14px'}}>
-                                  <Button size="small">
-                                    <PencilIcon sx={{width: '25px',height: '25px'}} />
+                                  <Button size="small" variant="text">
+                                    <PencilIcon sx={{width: '18px',height: '18px'}} />
                                   </Button>
-                                  <Button size="small">
-                                    <DeleteIcon sx={{width: '25px',height: '25px'}} />
+                                  <Button size="small" variant="text">
+                                    <DeleteIcon sx={{width: '18px',height: '18px'}} />
                                   </Button>
                                 </TableCell>
                               </TableRow>
@@ -142,7 +145,7 @@ const CategoriesPage = () => {
         open={open}
         onClose={handleClose}
         maxWidth="md"
-        
+        sx={{ "& .MuiPaper-root": { borderRadius: 2 } }}
       >
          <Toolbar style={{background:'#213555'}}>
             <p style={{fontSize: '18px', fontWeight: 'semibold',color:'white'}}>Add Arena</p>
@@ -238,23 +241,18 @@ const CategoriesPage = () => {
                         style: { borderRadius: 10 },
                       }}
                     />     
-                  </Grid>     
-                         
-                           
-                  {/* <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
-                    <FormControlLabel color="primary" control={<Switch  />} label="Status" sx={{padding: '10px',gap: '10px'}} />     
-                  </Grid>           */}
+                  </Grid>
             </Grid>              
           </DialogContentText>
         </DialogContent>
 
-        <DialogActions style={{width:'100%'}}>
+        <DialogActions className="!p-4" style={{width:'100%'}}>
           <Grid container spacing={2}>
               <Grid item xl={6} lg={6} md={6} sm={6} xs={6}>
                   <Button
-                    style={{backgroundColor:'#FEA168',color:'white',borderRadius:10,}}
+                    style={{backgroundColor:'#FEA168',color:'white',borderRadius:7, fontSize: 14}}
                     variant="contained"
-                    size="small"
+                    size="large"
                     onClick={handleClose}
                   >
                    Cancel
@@ -262,17 +260,15 @@ const CategoriesPage = () => {
               </Grid>
               <Grid item xl={6} lg={6} md={6} sm={6} xs={6} style={{textAlign:'end'}}>
                   <Button
-                    style={{backgroundColor:'#213555',color:'white',borderRadius:10}}
+                    style={{backgroundColor:'#213555',color:'white',borderRadius:7, fontSize: 14}}
                     variant="contained"
-                    size="small"
+                    size="large"
                     onClick={handleClickOpen}
                   >
                    Save
                   </Button>          
               </Grid>
           </Grid>
-          {/* <Button onClick={handleClose}>Cancel</Button>
-          <Button type="submit">Subscribe</Button> */}
         </DialogActions>
       </Dialog>
 

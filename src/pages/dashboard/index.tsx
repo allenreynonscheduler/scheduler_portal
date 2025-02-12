@@ -14,7 +14,7 @@ import BoxCards from 'components/sections/dashboard/BoxCards';
 const Dashboard = () => {
   return (
 
-      <Grid container spacing={1} justifyContent="center" alignItems="center">
+      <Grid container spacing={1} justifyContent="center" alignItems="center" className="!pt-2">
         <Grid item xs={12} lg={12}>
           <BoxCards />
         </Grid>
