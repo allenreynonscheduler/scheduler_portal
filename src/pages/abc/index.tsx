@@ -209,7 +209,6 @@ const CategoriesPage = () => {
                   </Grid>
                 </div>
               </TabPanel>
-              
            </Card>
       </Grid>
 
@@ -297,7 +296,6 @@ const CategoriesPage = () => {
           </Grid>
         </DialogActions>
       </Dialog>
-
     </Grid>
   );
 };
