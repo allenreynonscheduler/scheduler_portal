@@ -37,6 +37,10 @@ export interface IMenuitems {
 
 const Menuitems: IMenuitems[] = [
   {
+    navlabel: true,
+    subheader: 'Home',
+  },
+  {
     id: uniqueId(),
     title: 'Dashboard',
     icon: DashboardIcon,
@@ -60,35 +64,35 @@ const Menuitems: IMenuitems[] = [
     id: uniqueId(),
     title: 'ABC',
     icon:  ABCIcon,
-    href: '#!',
+    href: 'abc',
     available: true,
   },
   {
     id: uniqueId(),
     title: 'Ice Slot',
     icon: IceSlotIcon,
-    href: '#!',
+    href: 'ice-slot',
     available: true,
   },
   {
     id: uniqueId(),
     title: 'Home Ice',
     icon: HomeIceIcon,
-    href: '#!',
+    href: 'home-ice',
     available: true,
   },
   {
     id: uniqueId(),
     title:'Team Stats',
     icon: TeamStatsIcon,
-    href: '#!',
+    href: 'team-stats',
     available: true,
   },
   {
     id: uniqueId(),
     title: 'Survey',
     icon: SurveryIcon,
-    href: '#!',
+    href: 'survey',
     available: true,
   },
   {

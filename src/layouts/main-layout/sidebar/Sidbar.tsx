@@ -18,6 +18,7 @@ const Sidebar = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: SideNavPr
     return (
       <Box
         sx={{
+          backgroundColor: 'common.white',
           flexShrink: 0,
         }}
       >
@@ -26,6 +27,7 @@ const Sidebar = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: SideNavPr
           open
           variant="permanent"
           sx={{
+            backgroundColor: 'common.white',
             flexShrink: 0,
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
@@ -34,14 +36,16 @@ const Sidebar = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: SideNavPr
         >
           <Box
             sx={{
+              borderRight: 1,
+              borderColor: 'text.disabled',
+              backgroundColor: 'common.white',
               height: 1,
             }}
           >
             <Box
               sx={{
-                bgcolor: 'common.white',
-                px: 3,
-                boxShadow: 9,
+                px: 0,
+                boxShadow: 0,
               }}
             >
                <img
@@ -59,14 +63,8 @@ const Sidebar = ({ onDrawerClose, onDrawerTransitionEnd, mobileOpen }: SideNavPr
             </Box>
 
             <SimpleBar style={{ height: 'calc(100% - 68px)' }}>
-              <Box
-                sx={{
-                  borderRight: 1,
-                  borderColor: 'text.disabled',
-                }}
-              >
+              <Box >
                 <SidebarItems />
-                {/* <SidebarBanner /> */}
               </Box>
             </SimpleBar>
           </Box>

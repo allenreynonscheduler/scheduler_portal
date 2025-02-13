@@ -52,7 +52,7 @@ const MainLayout = () => {
         }}
       >
         <MainNavbar onDrawerToggle={handleDrawerToggle} />
-        <Container>
+        <Container className="!px-2.5 !py-1 !mt-0">
           <Box>
             <Outlet />
           </Box>

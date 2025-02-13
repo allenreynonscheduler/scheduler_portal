@@ -109,13 +109,6 @@ const Page = () => {
   }, []);
   return (
     <Grid container spacing={2} justifyContent="center" alignItems="center">
-      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-           <Card sx={{ py: { xs: 3, sm: 2 }, px: { xs: 5, sm: 3 }, bgcolor: 'common.white' }}>
-              <p style={{fontSize: '18px', fontWeight: 'bold', display: 'flex',gap: '10px'}}>Leagues</p>
-              <p style={{fontWeight: 'normal',fontSize: '14px', display: 'flex',gap: '10px',marginTop:'5px'}}>Dashboard <span style={{color:'#D9D9D9'}}>&#x25CF;</span> League</p>
-           </Card>
-      </Grid>
-      
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12} sx={{ mt: 1 }}>
            <Card sx={{ py: { xs: 3, sm: 3 }, px: { xs: 5, sm: 3 }, bgcolor: 'common.white' ,height:'75vh'}}>
                <Grid container spacing={2}>
@@ -176,17 +169,42 @@ const Page = () => {
                    <DownloadIcon /> 
                   </Button>
                 </Grid>
+                <Grid item xs={12} sm={12} lg={6}>
+                    <Grid container justifyContent="flex-end" spacing={1}>
+                      <Grid item xs={10} sx={{ textAlign: 'end' }}>
+                        <Button
+                          sx={{
+                            bgcolor: '#213555',
+                            color: 'white',
+                            fontSize: 14,
+                            borderRadius: 2,
+                            '&:hover': { bgcolor: '#1a2c44' }, // Optional: Add hover effect
+                          }}
+                          variant="contained"
+                          size="large"
+                          onClick={handleClickOpen}
+                        >
+                          <PlusIcon sx={{ mr: 1, width: 18, height: 18 }} /> Add League
+                        </Button>
+                      </Grid>
+                      <Grid item xs={2} sm={2} md={2} lg={1} xl={1} sx={{ textAlign: 'end' }}>
+                        <Button fullWidth>
+                          <DownloadIcon />
+                        </Button>
+                      </Grid>
+                    </Grid>
+                  </Grid>
               </Grid>
 
               <Grid container spacing={2} style={{marginTop:'20px'}}>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <TableContainer component={Paper} style={{backgroundColor: 'transparent'}}>
+                    <TableContainer component={Paper} elevation={0} style={{backgroundColor: 'transparent'}}>
                         <Table >
                           <TableHead>
                             <TableRow>
                               <TableCell sx={{fontSize: '16px'}}>Name</TableCell>
                               <TableCell sx={{fontSize: '16px'}}>Abbreviation</TableCell>
-                              <TableCell style={{width: '30%',fontSize: '16px'}}>Description</TableCell>
+                              <TableCell sx={{fontSize: '16px', width: '30%'}}>Description</TableCell>
                               <TableCell sx={{fontSize: '16px'}}>Active Season</TableCell>
                               <TableCell sx={{fontSize: '16px'}}>Status</TableCell>
                               <TableCell sx={{fontSize: '16px'}}>Actions</TableCell>
@@ -225,13 +243,13 @@ const Page = () => {
            </Card>
       </Grid>
 
-       <Dialog
-       fullWidth
+      <Dialog
+        fullWidth
         open={open}
         onClose={handleClose}
         maxWidth="sm"
-        
-      >
+        sx={{ "& .MuiPaper-root": { borderRadius: 2 } }}
+        >
          <Toolbar style={{background:'#213555'}}>
             <p style={{fontSize: '18px', fontWeight: 'semibold',color:'white'}}>Add League</p>
          </Toolbar>
@@ -282,13 +300,13 @@ const Page = () => {
             </DialogContentText>
         </DialogContent>
 
-        <DialogActions style={{width:'100%'}}>
+        <DialogActions className="!p-4" style={{width:'100%'}}>
           <Grid container spacing={2}>
               <Grid item xl={6} lg={6} md={6} sm={6} xs={6}>
                   <Button
-                    style={{backgroundColor:'#FEA168',color:'white',borderRadius:10,}}
+                    style={{backgroundColor:'#FEA168', color:'white', borderRadius:7, fontSize: 14}}
                     variant="contained"
-                    size="small"
+                    size="large"
                     onClick={handleClose}
                   >
                    Cancel
@@ -296,7 +314,7 @@ const Page = () => {
               </Grid>
               <Grid item xl={6} lg={6} md={6} sm={6} xs={6} style={{textAlign:'end'}}>
                   <Button
-                    style={{backgroundColor:'#213555',color:'white',borderRadius:10}}
+                    style={{backgroundColor:'#213555', color:'white', borderRadius:7, fontSize: 14}}
                     variant="contained"
                     size="small"
                     onClick={(form._id) ? update : store}
@@ -305,8 +323,6 @@ const Page = () => {
                   </Button>          
               </Grid>
           </Grid>
-          {/* <Button onClick={handleClose}>Cancel</Button>
-          <Button type="submit">Subscribe</Button> */}
         </DialogActions>
       </Dialog>
 

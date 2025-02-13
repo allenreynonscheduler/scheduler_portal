@@ -83,7 +83,7 @@ const LoginForm = () => {
           href="#!"
           type="submit"
           onClick={handleLogin}
-          style={{ backgroundColor: '#213555',color: 'white',borderRadius: '15px' }}
+          style={{ backgroundColor: '#213555', fontSize: 14, color: 'white',borderRadius: 7 }}
         >
         Log in
       </Button>
