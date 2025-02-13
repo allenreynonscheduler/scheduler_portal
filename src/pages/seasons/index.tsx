@@ -15,18 +15,106 @@ import PencilIcon from 'components/icons/pencil';
 import DeleteIcon from 'components/icons/delete';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-const CategoriesPage = () => {
-    const rows = [
+import { useAxios } from 'utils/axiosContext';
+
+interface League {
+  _id: string;
+  name: string;
+  abbreviation: string;
+  description: string;
+  status: number;
+  date_start: Date;
+  date_end: Date;
+  createdAt: string;
+  updatedAt: string;
+}
+
+interface PaginatedResponse {
+  total: number;
+  page: number;
+  limit: number;
+  totalPages: number;
+  data: League[];
+}
+
+const Page = () => {
+  const axios = useAxios();
+  const rows = [
     { name: 'Winter 2025', league: 'CCRHL', start: 'Mar. 01 , 2025',  end: 'May  30 , 2025' ,  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' , status:'Active' },
   ];
-const [open, setOpen] = React.useState(false);
-const handleClickOpen = () => {
+  const [open, setOpen] = React.useState(false);
+  const handleClickOpen = () => {
     setOpen(true);
   };
 
   const handleClose = () => {
+    setOpen(false);
+  };
+
+  
+  const [form, setForm] = React.useState({
+    _id: '',
+    name: '',
+    abbreviation: '',
+    description: '',
+    date_start: '',
+    date_end: '',
+  });
+  const [indexData, setIndexData] = React.useState<PaginatedResponse | null>(null);
+  
+  const index = async () => {
+    try {
+      const response = await axios.get(`/seasons`);
+      setIndexData(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error fetching teams:', error);
+    }
+  };
+
+  const store = async () => {
+    try {
+      const response = await axios.post(`/seasons`, { ...form });
+      index();
+    } catch (error) {
+      console.error('Error fetching teams:', error);
+    }
+  };
+
+  const show = async (id: string | null = null) => {
+    try {
+      const response = await axios.get(`/seasons/${id}`);
+      console.log(response.data);
+      setForm(response.data)
+      setOpen(true);
+    } catch (error) {
+      console.error('Error fetching teams:', error);
+    }
+  };
+
+  const update = async () => {
+    try {
+      const response = await axios.put(`/seasons/${form._id}`, { ...form });
+      index();
       setOpen(false);
-    };
+    } catch (error) {
+      console.error('Error fetching teams:', error);
+    }
+  };
+
+  const destroy = async (id: string | null = null) => {
+    try {
+      const response = await axios.delete(`/seasons/${id}`);
+      index();
+      // setOpen(false);
+    } catch (error) {
+      console.error('Error fetching teams:', error);
+    }
+  };
+
+  React.useEffect(() => {
+    index();
+  }, []);
   return (
     <Grid container spacing={2} justifyContent="center" alignItems="center">
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12} sx={{ mt: 1 }}>
@@ -104,24 +192,30 @@ const handleClickOpen = () => {
                             </TableRow>
                           </TableHead>
                           <TableBody>
-                            {rows.map((row, index) => (
-                              <TableRow key={index}>
+                          {indexData?.data?.length ? ( indexData.data.map((row) => (
+                              <TableRow key={row._id}>
                                 <TableCell sx={{fontSize: '14px'}}>{row.name}</TableCell>
-                                <TableCell sx={{fontSize: '14px'}}>{row.league}</TableCell>
-                                <TableCell sx={{fontSize: '14px'}}>{row.start}</TableCell>
-                                <TableCell sx={{fontSize: '14px'}}>{row.end}</TableCell>
+                                <TableCell sx={{fontSize: '14px'}}>{row.abbreviation}</TableCell>
                                 <TableCell sx={{fontSize: '14px'}}>{row.description}</TableCell>
-                                <TableCell sx={{fontSize: '14px'}}>{row.status}</TableCell>
+                                <TableCell sx={{fontSize: '14px'}}>{null}</TableCell>
+                                <TableCell sx={{fontSize: '14px'}}>{(row.status == 1) ? 'Active':'Inactive'}</TableCell>
                                 <TableCell sx={{fontSize: '14px'}}>
-                                  <Button size="small">
-                                    <PencilIcon sx={{width: '18px',height: '18px'}} />
+                                  <Button size="small" onClick={() => show(row._id)}>
+                                    <PencilIcon sx={{width: '25px',height: '25px'}} />
                                   </Button>
-                                  <Button size="small">
-                                    <DeleteIcon sx={{width: '18px',height: '18px'}} />
+                                  <Button size="small" onClick={() => destroy(row._id)}>
+                                    <DeleteIcon sx={{width: '25px',height: '25px'}} />
                                   </Button>
                                 </TableCell>
                               </TableRow>
-                            ))}
+                             ))
+                            ) : (
+                              <TableRow>
+                                <TableCell colSpan={5} align="center">
+                                  No data available
+                                </TableCell>
+                              </TableRow>
+                            )}
                           </TableBody>
                         </Table>
                       </TableContainer>   
@@ -149,6 +243,8 @@ const handleClickOpen = () => {
                       placeholder="Name"
                       variant="outlined"
                       type="text"
+                      value={form.name}
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
                       InputProps={{
                         style: { borderRadius: 10 },
                       }}
@@ -160,6 +256,8 @@ const handleClickOpen = () => {
                       placeholder="Abbreviation"
                       variant="outlined"
                       type="text"
+                      value={form.abbreviation}
+                      onChange={(e) => setForm({ ...form, abbreviation: e.target.value })}
                       InputProps={{
                         style: { borderRadius: 10 },
                       }}
@@ -172,6 +270,8 @@ const handleClickOpen = () => {
                       placeholder="Date Start"
                       variant="outlined"
                       type="date"
+                      value={form.date_start}
+                      onChange={(e) => setForm({ ...form, date_start: e.target.value })}
                       rows={3}
                       InputProps={{
                         style: { borderRadius: 10, paddingRight: 8 },
@@ -185,6 +285,8 @@ const handleClickOpen = () => {
                       placeholder="Date Start"
                       variant="outlined"
                       type="date"
+                      value={form.date_end}
+                      onChange={(e) => setForm({ ...form, date_end: e.target.value })}
                       rows={3}
                       InputProps={{
                         style: { borderRadius: 10, paddingRight: 8 },
@@ -197,6 +299,8 @@ const handleClickOpen = () => {
                       placeholder="Desription"
                       variant="outlined"
                       type="text"
+                      value={form.description}
+                      onChange={(e) => setForm({ ...form, description: e.target.value })}
                       rows={3}
                       InputProps={{
                         style: { borderRadius: 10 },
@@ -226,10 +330,10 @@ const handleClickOpen = () => {
                   <Button
                     style={{backgroundColor:'#213555',color:'white',borderRadius:7, fontSize: 14}}
                     variant="contained"
-                    size="large"
-                    onClick={handleClickOpen}
+                    size="small"
+                    onClick={(form._id) ? update : store}
                   >
-                   Save
+                  {(form._id) ? 'Update' : 'Save'}
                   </Button>          
               </Grid>
           </Grid>
@@ -242,4 +346,4 @@ const handleClickOpen = () => {
   );
 };
 
-export default CategoriesPage;
+export default Page;
