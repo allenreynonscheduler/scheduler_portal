@@ -2,7 +2,6 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { lazy } from 'react';
 
 const Dashboard = lazy(() => import('pages/dashboard/index'));
-const CategoriesPage = lazy(() => import('pages/categories/index'));
 const LeaguesPage = lazy(() => import('pages/leagues/index'));
 const Seasons = lazy(() => import('pages/seasons/index'));
 const Divisions = lazy(() => import('pages/divisions/index'));

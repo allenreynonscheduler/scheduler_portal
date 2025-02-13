@@ -68,3 +68,7 @@ input[data-autocompleted] {
 .css-1ko4ikc{
   overflow-y: hidden !important;
 }
+.active-route{
+    color: #000 !important;
+    background-color: #F5EFE7 !important;
+}

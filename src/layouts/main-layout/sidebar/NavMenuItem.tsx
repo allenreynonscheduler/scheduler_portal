@@ -8,6 +8,7 @@ import {
   Typography,
 } from '@mui/material';
 import { IMenuitems } from './MenuItems';
+import React, { useState } from 'react';
 
 interface NavMenuItemType {
   item: IMenuitems;
@@ -16,13 +17,18 @@ interface NavMenuItemType {
 const NavMenuItem = ({ item, pathTo }: NavMenuItemType) => {
   const { icon: Icon } = item;
   const itemIcon = Icon ? <Icon /> : null;
+  const [activeItem, setActiveItem] = useState<string | number | null>(null);
+  const handleItemClick = (route: string) => {
+    setActiveItem(route);
+  };
   return (
     <List component="li" disablePadding key={item?.id && item.title}>
       <ListItemButton
         component={Link}
         href={item?.href}
         disabled={item?.disabled}
-        selected={pathTo === item?.href}
+        // selected={pathTo === item?.href}
+        className={pathTo == item?.href ? 'active-route' : ''}
       >
         <ListItemIcon
           sx={{

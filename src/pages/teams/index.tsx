@@ -20,7 +20,7 @@ import Divider from '@mui/material/Divider';
 import MenuItem from '@mui/material/MenuItem';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
-
+// import logo from '../../../assets/loginlogo.png';
 const CategoriesPage = () => {
     const [league, setleague] = React.useState('');
     const rows = [
@@ -155,6 +155,9 @@ const CategoriesPage = () => {
                   <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
                    <h4>General Information</h4>
                    <Divider />
+                  </Grid>          
+                  <Grid item xl={2} lg={2} md={2} sm={2} xs={2}>
+                      
                   </Grid>          
                   <Grid item xl={6} lg={6} md={6} sm={6} xs={6}>
                     <TextField
