@@ -1,24 +1,24 @@
 import * as React from 'react';
-import { Box, Card, Grid,Switch , Stack, TextField,InputAdornment,Button,Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper,InputLabel } from '@mui/material';
+import { Box, Card, Grid, Switch , Stack, TextField,InputAdornment,Button,Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper,InputLabel } from '@mui/material';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import Toolbar from '@mui/material/Toolbar';
-import DialogTitle from '@mui/material/DialogTitle';
-import AppBar from '@mui/material/AppBar';
+// import DialogTitle from '@mui/material/DialogTitle';
+// import AppBar from '@mui/material/AppBar';
 import SearchIcon from 'components/icons/search';
 import FilterIcon from 'components/icons/filter';
 import PlusIcon from 'components/icons/addbutton';
 import DownloadIcon from 'components/icons/download';
 import PencilIcon from 'components/icons/pencil';
 import DeleteIcon from 'components/icons/delete';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
+// import FormGroup from '@mui/material/FormGroup';
+// import FormControlLabel from '@mui/material/FormControlLabel';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Divider from '@mui/material/Divider';
 import MenuItem from '@mui/material/MenuItem';
-import FormHelperText from '@mui/material/FormHelperText';
+// import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 // import logo from '../../../assets/loginlogo.png';
 const CategoriesPage = () => {
@@ -35,14 +35,15 @@ const CategoriesPage = () => {
   };
 
   const handleClose = () => {
-      setOpen(false);
-    };
+    setOpen(false);
+  };
+
   return (
     <Grid container spacing={2} justifyContent="center" alignItems="center">
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
            <Card sx={{ py: { xs: 3, sm: 2 }, px: { xs: 5, sm: 3 }, bgcolor: 'common.white' }}>
               <p style={{fontSize: '18px', fontWeight: 'bold', display: 'flex',gap: '10px'}}>Teams</p>
-              <p style={{fontWeight: 'normal',fontSize: '14px', display: 'flex',gap: '10px',marginTop:'5px'}}>Dashboard <div style={{color:'#D9D9D9'}}>&#x25CF;</div> Teams</p>
+              <p style={{fontWeight: 'normal',fontSize: '14px', display: 'flex',gap: '10px',marginTop:'5px'}}>Dashboard <span style={{color:'#D9D9D9'}}>&#x25CF;</span> Teams</p>
            </Card>
       </Grid>
       
